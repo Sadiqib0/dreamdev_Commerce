@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram name="ERD - Entity Relationship Diagram" id="erd-diagram">
+    <mxGraphModel dx="1800" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="DreamCommerce - Entity Relationship Diagram" style="text;html=1;fontSize=20;fontStyle=1;align=center;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="400" y="14" width="760" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="user" value="User" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="80" width="240" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="user_attrs" value="PK  id : BIGINT AUTO_INCREMENT&#xa;      name : VARCHAR(100) NOT NULL&#xa;      email : VARCHAR(255) UNIQUE&#xa;      password : VARCHAR(255)&#xa;      role : ENUM(CUSTOMER,VENDOR,ADMIN)&#xa;      verified : BOOLEAN DEFAULT FALSE&#xa;      createdAt : DATETIME" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=11;" vertex="1" parent="user">
+          <mxGeometry y="30" width="240" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="product" value="Product" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="960" y="80" width="260" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="product_attrs" value="PK  id : BIGINT AUTO_INCREMENT&#xa;FK  vendorId : BIGINT&#xa;      name : VARCHAR(255) NOT NULL&#xa;      description : TEXT&#xa;      price : DECIMAL(10,2) NOT NULL&#xa;      imageUrl : VARCHAR(500)&#xa;      category : VARCHAR(100)&#xa;      stock : INT&#xa;      status : ENUM(ACTIVE,INACTIVE)&#xa;      createdAt : DATETIME" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=11;" vertex="1" parent="product">
+          <mxGeometry y="30" width="260" height="260" as="geometry" />
+        </mxCell>
+
+        <mxCell id="notification" value="Notification" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="250" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="notification_attrs" value="PK  id : BIGINT AUTO_INCREMENT&#xa;FK  userId : BIGINT&#xa;      message : TEXT&#xa;      status : ENUM(UNREAD,READ)&#xa;      createdAt : DATETIME" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=11;" vertex="1" parent="notification">
+          <mxGeometry y="30" width="250" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ord" value="Order" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="440" width="240" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ord_attrs" value="PK  id : BIGINT AUTO_INCREMENT&#xa;FK  customerId : BIGINT&#xa;      status : ENUM(PENDING,...,CANCELLED)&#xa;      totalAmount : DECIMAL(10,2)&#xa;      createdAt : DATETIME" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=11;" vertex="1" parent="ord">
+          <mxGeometry y="30" width="240" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="orderitem" value="OrderItem" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="960" y="460" width="260" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="orderitem_attrs" value="PK  id : BIGINT AUTO_INCREMENT&#xa;FK  orderId : BIGINT&#xa;FK  productId : BIGINT&#xa;      quantity : INT&#xa;      price : DECIMAL(10,2)" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=11;" vertex="1" parent="orderitem">
+          <mxGeometry y="30" width="260" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cart" value="Cart" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="370" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="cart_attrs" value="PK  id : BIGINT AUTO_INCREMENT&#xa;FK  customerId : BIGINT UNIQUE&#xa;      createdAt : DATETIME" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=11;" vertex="1" parent="cart">
+          <mxGeometry y="30" width="250" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cartitem" value="CartItem" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="590" width="250" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="cartitem_attrs" value="PK  id : BIGINT AUTO_INCREMENT&#xa;FK  cartId : BIGINT&#xa;FK  productId : BIGINT&#xa;      quantity : INT" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=11;" vertex="1" parent="cartitem">
+          <mxGeometry y="30" width="250" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="payment" value="Payment" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="720" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="payment_attrs" value="PK  id : BIGINT AUTO_INCREMENT&#xa;FK  orderId : BIGINT UNIQUE&#xa;      amount : DECIMAL(10,2)&#xa;      status : ENUM(PENDING,COMPLETED,...)&#xa;      method : ENUM(CARD,BANK_TRANSFER,...)&#xa;      createdAt : DATETIME" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=11;" vertex="1" parent="payment">
+          <mxGeometry y="30" width="240" height="160" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend" value="Legend" style="swimlane;fontStyle=1;startSize=26;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="80" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_attrs" value="PK = Primary Key (first row)&#xa;FK = Foreign Key&#xa;| —— Many-to-One&#xa;&lt;— One-to-Many (crow&#x27;s foot)" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fontSize=11;" vertex="1" parent="legend">
+          <mxGeometry y="26" width="200" height="84" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_user_order" value="places&#xa;1        *" style="edgeStyle=orthogonalEdgeStyle;endArrow=ERmany;startArrow=ERmandOne;endFill=0;startFill=0;strokeColor=#b85450;strokeWidth=2;fontSize=11;fontStyle=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="user" target="ord">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_user_cart" value="has&#xa;1        1" style="edgeStyle=orthogonalEdgeStyle;endArrow=ERmandOne;startArrow=ERmandOne;endFill=0;startFill=0;strokeColor=#d6b656;strokeWidth=2;fontSize=11;fontStyle=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="user" target="cart">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_user_notif" value="receives&#xa;1        *" style="edgeStyle=orthogonalEdgeStyle;endArrow=ERmany;startArrow=ERmandOne;endFill=0;startFill=0;strokeColor=#d79b00;strokeWidth=2;fontSize=11;fontStyle=2;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="user" target="notification">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_user_product" value="sells&#xa;1        *" style="edgeStyle=orthogonalEdgeStyle;endArrow=ERmany;startArrow=ERmandOne;endFill=0;startFill=0;strokeColor=#82b366;strokeWidth=2;fontSize=11;fontStyle=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="user" target="product">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_order_oi" value="contains&#xa;1        *" style="edgeStyle=orthogonalEdgeStyle;endArrow=ERmany;startArrow=ERmandOne;endFill=0;startFill=0;strokeColor=#9673a6;strokeWidth=2;fontSize=11;fontStyle=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ord" target="orderitem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_product_oi" value="in&#xa;1   *" style="edgeStyle=orthogonalEdgeStyle;endArrow=ERmany;startArrow=ERmandOne;endFill=0;startFill=0;strokeColor=#82b366;strokeWidth=2;fontSize=11;fontStyle=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="product" target="orderitem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_cart_ci" value="contains&#xa;1        *" style="edgeStyle=orthogonalEdgeStyle;endArrow=ERmany;startArrow=ERmandOne;endFill=0;startFill=0;strokeColor=#d6b656;strokeWidth=2;fontSize=11;fontStyle=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cart" target="cartitem">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="r_product_ci" value="in carts&#xa;1        *" style="edgeStyle=orthogonalEdgeStyle;endArrow=ERmany;startArrow=ERmandOne;endFill=0;startFill=0;strokeColor=#82b366;strokeWidth=2;fontSize=11;fontStyle=2;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="product" target="cartitem">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="730" />
+              <mxPoint x="360" y="730" />
+              <mxPoint x="360" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="r_order_payment" value="paid via&#xa;1        1" style="edgeStyle=orthogonalEdgeStyle;endArrow=ERmandOne;startArrow=ERmandOne;endFill=0;startFill=0;strokeColor=#6c8ebf;strokeWidth=2;fontSize=11;fontStyle=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ord" target="payment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram name="Class Diagram" id="class-diagram">
+    <mxGraphModel dx="2000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ===================== TITLE ===================== -->
+        <mxCell id="title" value="DreamCommerce - Class Diagram" style="text;html=1;fontSize=22;fontStyle=1;align=center;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="700" y="10" width="800" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ===================== LAYER LABELS ===================== -->
+        <mxCell id="lbl_model" value="MODEL LAYER" style="text;fontSize=13;fontStyle=1;fillColor=#fff2cc;strokeColor=#d6b656;rounded=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="30" y="60" width="160" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl_repo" value="REPOSITORY LAYER" style="text;fontSize=13;fontStyle=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="30" y="600" width="180" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl_service" value="SERVICE LAYER" style="text;fontSize=13;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="30" y="870" width="160" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl_controller" value="CONTROLLER LAYER" style="text;fontSize=13;fontStyle=1;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1230" width="180" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl_enum" value="ENUMERATIONS" style="text;fontSize=13;fontStyle=1;fillColor=#ffe6cc;strokeColor=#d79b00;rounded=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1480" width="160" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== MODEL CLASSES ==================== -->
+
+        <!-- User Class -->
+        <mxCell id="cls_user" value="User" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="100" width="250" height="290" as="geometry"/>
+        </mxCell>
+        <mxCell id="user_attrs" value="- id : Long&#xa;- name : String&#xa;- email : String&#xa;- password : String&#xa;- role : Role&#xa;- verified : boolean&#xa;- createdAt : LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;fontStyle=0;" vertex="1" parent="cls_user">
+          <mxGeometry y="30" width="250" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="user_div" value="" style="line;strokeColor=#d6b656;fillColor=none;" vertex="1" parent="cls_user">
+          <mxGeometry y="190" width="250" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="user_methods" value="+ getId() : Long&#xa;+ getName() : String&#xa;+ getEmail() : String&#xa;+ getRole() : Role&#xa;+ isVerified() : boolean&#xa;+ setVerified(b: boolean) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_user">
+          <mxGeometry y="200" width="250" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- Product Class -->
+        <mxCell id="cls_product" value="Product" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="100" width="260" height="330" as="geometry"/>
+        </mxCell>
+        <mxCell id="product_attrs" value="- id : Long&#xa;- name : String&#xa;- description : String&#xa;- price : BigDecimal&#xa;- imageUrl : String&#xa;- category : String&#xa;- stock : Integer&#xa;- vendorId : Long&#xa;- status : ProductStatus&#xa;- createdAt : LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_product">
+          <mxGeometry y="30" width="260" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="product_div" value="" style="line;strokeColor=#d6b656;fillColor=none;" vertex="1" parent="cls_product">
+          <mxGeometry y="230" width="260" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="product_methods" value="+ getId() : Long&#xa;+ getName() : String&#xa;+ getPrice() : BigDecimal&#xa;+ getStatus() : ProductStatus" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_product">
+          <mxGeometry y="240" width="260" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Order Class -->
+        <mxCell id="cls_order" value="Order" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="100" width="250" height="250" as="geometry"/>
+        </mxCell>
+        <mxCell id="order_attrs" value="- id : Long&#xa;- customerId : Long&#xa;- status : OrderStatus&#xa;- totalAmount : BigDecimal&#xa;- createdAt : LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_order">
+          <mxGeometry y="30" width="250" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="order_div" value="" style="line;strokeColor=#d6b656;fillColor=none;" vertex="1" parent="cls_order">
+          <mxGeometry y="150" width="250" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="order_methods" value="+ getId() : Long&#xa;+ getCustomerId() : Long&#xa;+ getStatus() : OrderStatus&#xa;+ getTotalAmount() : BigDecimal&#xa;+ setStatus(s: OrderStatus) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_order">
+          <mxGeometry y="160" width="250" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- OrderItem Class -->
+        <mxCell id="cls_orderitem" value="OrderItem" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="910" y="100" width="240" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="oi_attrs" value="- id : Long&#xa;- orderId : Long&#xa;- productId : Long&#xa;- quantity : Integer&#xa;- price : BigDecimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_orderitem">
+          <mxGeometry y="30" width="240" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="oi_div" value="" style="line;strokeColor=#d6b656;fillColor=none;" vertex="1" parent="cls_orderitem">
+          <mxGeometry y="150" width="240" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="oi_methods" value="+ getId() : Long&#xa;+ getOrderId() : Long&#xa;+ getProductId() : Long&#xa;+ getQuantity() : Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_orderitem">
+          <mxGeometry y="160" width="240" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Cart Class -->
+        <mxCell id="cls_cart" value="Cart" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="100" width="230" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="cart_attrs" value="- id : Long&#xa;- customerId : Long&#xa;- createdAt : LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_cart">
+          <mxGeometry y="30" width="230" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="cart_div" value="" style="line;strokeColor=#d6b656;fillColor=none;" vertex="1" parent="cls_cart">
+          <mxGeometry y="110" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="cart_methods" value="+ getId() : Long&#xa;+ getCustomerId() : Long&#xa;+ getCreatedAt() : LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_cart">
+          <mxGeometry y="120" width="230" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- CartItem Class -->
+        <mxCell id="cls_cartitem" value="CartItem" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="100" width="230" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="ci_attrs" value="- id : Long&#xa;- cartId : Long&#xa;- productId : Long&#xa;- quantity : Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_cartitem">
+          <mxGeometry y="30" width="230" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="ci_div" value="" style="line;strokeColor=#d6b656;fillColor=none;" vertex="1" parent="cls_cartitem">
+          <mxGeometry y="130" width="230" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="ci_methods" value="+ getId() : Long&#xa;+ getCartId() : Long&#xa;+ getProductId() : Long&#xa;+ getQuantity() : Integer" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_cartitem">
+          <mxGeometry y="140" width="230" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Payment Class -->
+        <mxCell id="cls_payment" value="Payment" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1730" y="100" width="250" height="270" as="geometry"/>
+        </mxCell>
+        <mxCell id="pay_attrs" value="- id : Long&#xa;- orderId : Long&#xa;- amount : BigDecimal&#xa;- status : PaymentStatus&#xa;- method : PaymentMethod&#xa;- createdAt : LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_payment">
+          <mxGeometry y="30" width="250" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="pay_div" value="" style="line;strokeColor=#d6b656;fillColor=none;" vertex="1" parent="cls_payment">
+          <mxGeometry y="180" width="250" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="pay_methods" value="+ getId() : Long&#xa;+ getOrderId() : Long&#xa;+ getAmount() : BigDecimal&#xa;+ getStatus() : PaymentStatus&#xa;+ setStatus(s: PaymentStatus) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_payment">
+          <mxGeometry y="190" width="250" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Notification Class -->
+        <mxCell id="cls_notif" value="Notification" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="2020" y="100" width="250" height="250" as="geometry"/>
+        </mxCell>
+        <mxCell id="notif_attrs" value="- id : Long&#xa;- userId : Long&#xa;- message : String&#xa;- status : NotificationStatus&#xa;- createdAt : LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_notif">
+          <mxGeometry y="30" width="250" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="notif_div" value="" style="line;strokeColor=#d6b656;fillColor=none;" vertex="1" parent="cls_notif">
+          <mxGeometry y="150" width="250" height="10" as="geometry"/>
+        </mxCell>
+        <mxCell id="notif_methods" value="+ getId() : Long&#xa;+ getUserId() : Long&#xa;+ getStatus() : NotificationStatus&#xa;+ setStatus(s: NotificationStatus) : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=8;fontSize=11;" vertex="1" parent="cls_notif">
+          <mxGeometry y="160" width="250" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== REPOSITORIES ==================== -->
+
+        <mxCell id="repo_product" value="&lt;&lt;interface&gt;&gt;&#xa;ProductRepository" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="640" width="240" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="repo_product_methods" value="extends JpaRepository&lt;Product, Long&gt;" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="repo_product">
+          <mxGeometry y="44" width="240" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="repo_user" value="&lt;&lt;interface&gt;&gt;&#xa;UserRepository" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="640" width="240" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="repo_user_methods" value="extends JpaRepository&lt;User, Long&gt;&#xa;findByEmail(email): Optional&lt;User&gt;" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="repo_user">
+          <mxGeometry y="44" width="240" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="repo_order" value="&lt;&lt;interface&gt;&gt;&#xa;OrderRepository" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="640" width="260" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="repo_order_methods" value="extends JpaRepository&lt;Order, Long&gt;&#xa;findByCustomerId(id): List&lt;Order&gt;" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="repo_order">
+          <mxGeometry y="44" width="260" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="repo_oi" value="&lt;&lt;interface&gt;&gt;&#xa;OrderItemRepository" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="640" width="260" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="repo_oi_methods" value="extends JpaRepository&lt;OrderItem, Long&gt;&#xa;findByOrderId(id): List&lt;OrderItem&gt;" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="repo_oi">
+          <mxGeometry y="44" width="260" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="repo_cart" value="&lt;&lt;interface&gt;&gt;&#xa;CartRepository" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="640" width="250" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="repo_cart_methods" value="extends JpaRepository&lt;Cart, Long&gt;&#xa;findByCustomerId(id): Optional&lt;Cart&gt;" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="repo_cart">
+          <mxGeometry y="44" width="250" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="repo_ci" value="&lt;&lt;interface&gt;&gt;&#xa;CartItemRepository" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="640" width="260" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="repo_ci_methods" value="extends JpaRepository&lt;CartItem, Long&gt;&#xa;findByCartId(id): List&lt;CartItem&gt;&#xa;findByCartIdAndProductId(c,p): Optional" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="repo_ci">
+          <mxGeometry y="44" width="260" height="56" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="repo_payment" value="&lt;&lt;interface&gt;&gt;&#xa;PaymentRepository" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1780" y="640" width="250" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="repo_pay_methods" value="extends JpaRepository&lt;Payment, Long&gt;&#xa;findByOrderId(id): Optional&lt;Payment&gt;" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="repo_payment">
+          <mxGeometry y="44" width="250" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="repo_notif" value="&lt;&lt;interface&gt;&gt;&#xa;NotificationRepository" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="2070" y="640" width="270" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="repo_notif_methods" value="extends JpaRepository&lt;Notification, Long&gt;&#xa;findByUserId(id): List&lt;Notification&gt;&#xa;deleteByCreatedAtBefore(date): void" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="repo_notif">
+          <mxGeometry y="44" width="270" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SERVICE INTERFACES ==================== -->
+
+        <mxCell id="svc_product" value="&lt;&lt;interface&gt;&gt;&#xa;ProductService" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="910" width="250" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_product_methods" value="+ addProduct(req): AddProductResponse&#xa;+ getProduct(id): ProductResponse&#xa;+ getAllProducts(): List&lt;ProductResponse&gt;&#xa;+ updateProduct(id, req): ProductResponse&#xa;+ deleteProduct(id): void" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="svc_product">
+          <mxGeometry y="44" width="250" height="96" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="svc_user" value="&lt;&lt;interface&gt;&gt;&#xa;UserService" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="910" width="260" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_user_methods" value="+ createUser(req): UserResponse&#xa;+ getUser(id): UserResponse&#xa;+ getAllUsers(): List&lt;UserResponse&gt;&#xa;+ updateUser(id, req): UserResponse&#xa;+ deleteUser(id): void&#xa;+ verifyVendor(id): UserResponse" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="svc_user">
+          <mxGeometry y="44" width="260" height="116" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="svc_order" value="&lt;&lt;interface&gt;&gt;&#xa;OrderService" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="910" width="270" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_order_methods" value="+ createOrder(req): OrderResponse&#xa;+ getOrder(id): OrderResponse&#xa;+ getOrdersByCustomer(id): List&#xa;+ updateOrderStatus(id, status): OrderResponse&#xa;+ deleteOrder(id): void" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="svc_order">
+          <mxGeometry y="44" width="270" height="106" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="svc_cart" value="&lt;&lt;interface&gt;&gt;&#xa;CartService" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="930" y="910" width="250" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_cart_methods" value="+ addToCart(req): CartResponse&#xa;+ getCart(customerId): CartResponse&#xa;+ removeFromCart(cartItemId): CartResponse&#xa;+ clearCart(customerId): void" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="svc_cart">
+          <mxGeometry y="44" width="250" height="86" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="svc_payment" value="&lt;&lt;interface&gt;&gt;&#xa;PaymentService" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="910" width="260" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_payment_methods" value="+ createPayment(req): PaymentResponse&#xa;+ getPayment(id): PaymentResponse&#xa;+ getPaymentByOrder(id): PaymentResponse&#xa;+ getAllPayments(): List&lt;PaymentResponse&gt;&#xa;+ deletePayment(id): void" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="svc_payment">
+          <mxGeometry y="44" width="260" height="106" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="svc_notif" value="&lt;&lt;interface&gt;&gt;&#xa;NotificationService" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="910" width="280" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_notif_methods" value="+ createNotification(req): NotificationResponse&#xa;+ getNotification(id): NotificationResponse&#xa;+ getNotificationsByUser(id): List&#xa;+ markAsRead(id): NotificationResponse&#xa;+ deleteNotification(id): void&#xa;+ deleteStaleNotifications(): void" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="svc_notif">
+          <mxGeometry y="44" width="280" height="126" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== CONTROLLERS ==================== -->
+
+        <mxCell id="ctrl_product" value="ProductController" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1270" width="250" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl_product_methods" value="@RequestMapping(/api/products)&#xa;POST  /  → addProduct()&#xa;GET   /{id} → getProduct()&#xa;GET   /  → getAllProducts()&#xa;PUT   /{id} → updateProduct()&#xa;DELETE /{id} → deleteProduct()" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="ctrl_product">
+          <mxGeometry y="30" width="250" height="130" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ctrl_user" value="UserController" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1270" width="260" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl_user_methods" value="@RequestMapping(/api/users)&#xa;POST  /  → createUser()&#xa;GET   /{id} → getUser()&#xa;GET   /  → getAllUsers()&#xa;PUT   /{id} → updateUser()&#xa;DELETE /{id} → deleteUser()&#xa;PATCH /{id}/verify → verifyVendor()" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="ctrl_user">
+          <mxGeometry y="30" width="260" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ctrl_order" value="OrderController" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="1270" width="260" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl_order_methods" value="@RequestMapping(/api/orders)&#xa;POST  /  → createOrder()&#xa;GET   /{id} → getOrder()&#xa;GET   /customer/{id} → getByCustomer()&#xa;PATCH /{id}/status → updateStatus()&#xa;DELETE /{id} → deleteOrder()" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="ctrl_order">
+          <mxGeometry y="30" width="260" height="140" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ctrl_cart" value="CartController" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1270" width="260" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl_cart_methods" value="@RequestMapping(/api/cart)&#xa;POST  /  → addToCart()&#xa;GET   /{customerId} → getCart()&#xa;DELETE /item/{id} → removeFromCart()&#xa;DELETE /{id}/clear → clearCart()" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="ctrl_cart">
+          <mxGeometry y="30" width="260" height="130" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ctrl_payment" value="PaymentController" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="1270" width="260" height="170" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl_payment_methods" value="@RequestMapping(/api/payments)&#xa;POST  /  → createPayment()&#xa;GET   /{id} → getPayment()&#xa;GET   /order/{id} → getByOrder()&#xa;GET   /  → getAllPayments()&#xa;DELETE /{id} → deletePayment()" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="ctrl_payment">
+          <mxGeometry y="30" width="260" height="140" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ctrl_notif" value="NotificationController" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="1270" width="280" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl_notif_methods" value="@RequestMapping(/api/notifications)&#xa;POST  /  → createNotification()&#xa;GET   /{id} → getNotification()&#xa;GET   /user/{id} → getByUser()&#xa;PATCH /{id}/read → markAsRead()&#xa;DELETE /{id} → deleteNotification()" style="text;strokeColor=none;fillColor=none;align=left;spacingLeft=8;fontSize=11;" vertex="1" parent="ctrl_notif">
+          <mxGeometry y="30" width="280" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== ENUMERATIONS ==================== -->
+
+        <mxCell id="enum_role" value="&lt;&lt;enumeration&gt;&gt;&#xa;Role" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1520" width="160" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="enum_role_vals" value="CUSTOMER&#xa;VENDOR&#xa;ADMIN" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;" vertex="1" parent="enum_role">
+          <mxGeometry y="44" width="160" height="46" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="enum_orderstatus" value="&lt;&lt;enumeration&gt;&gt;&#xa;OrderStatus" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="1520" width="190" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="enum_os_vals" value="PENDING&#xa;PROCESSING&#xa;SHIPPED&#xa;DELIVERED&#xa;CANCELLED" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;" vertex="1" parent="enum_orderstatus">
+          <mxGeometry y="44" width="190" height="66" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="enum_paystatus" value="&lt;&lt;enumeration&gt;&gt;&#xa;PaymentStatus" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="1520" width="190" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="enum_ps_vals" value="PENDING&#xa;COMPLETED&#xa;FAILED&#xa;REFUNDED" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;" vertex="1" parent="enum_paystatus">
+          <mxGeometry y="44" width="190" height="56" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="enum_paymethod" value="&lt;&lt;enumeration&gt;&gt;&#xa;PaymentMethod" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1520" width="190" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="enum_pm_vals" value="CARD&#xa;BANK_TRANSFER&#xa;CRYPTO" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;" vertex="1" parent="enum_paymethod">
+          <mxGeometry y="44" width="190" height="46" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="enum_prodstatus" value="&lt;&lt;enumeration&gt;&gt;&#xa;ProductStatus" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1520" width="190" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="enum_prods_vals" value="ACTIVE&#xa;INACTIVE" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;" vertex="1" parent="enum_prodstatus">
+          <mxGeometry y="44" width="190" height="36" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="enum_notifstatus" value="&lt;&lt;enumeration&gt;&gt;&#xa;NotificationStatus" style="swimlane;fontStyle=3;align=center;startSize=44;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="1520" width="200" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="enum_ns_vals" value="UNREAD&#xa;READ" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=12;" vertex="1" parent="enum_notifstatus">
+          <mxGeometry y="44" width="200" height="36" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== RELATIONSHIPS ==================== -->
+
+        <!-- Controllers USE Services (dependency) -->
+        <mxCell id="rel_ctrl_prod_svc" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#6c8ebf;strokeWidth=1.5;" edge="1" parent="1" source="ctrl_product" target="svc_product">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_ctrl_user_svc" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#6c8ebf;strokeWidth=1.5;" edge="1" parent="1" source="ctrl_user" target="svc_user">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_ctrl_ord_svc" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#6c8ebf;strokeWidth=1.5;" edge="1" parent="1" source="ctrl_order" target="svc_order">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_ctrl_cart_svc" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#6c8ebf;strokeWidth=1.5;" edge="1" parent="1" source="ctrl_cart" target="svc_cart">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_ctrl_pay_svc" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#6c8ebf;strokeWidth=1.5;" edge="1" parent="1" source="ctrl_payment" target="svc_payment">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_ctrl_notif_svc" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#6c8ebf;strokeWidth=1.5;" edge="1" parent="1" source="ctrl_notif" target="svc_notif">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Services USE Repositories (dependency) -->
+        <mxCell id="rel_svc_prod_repo" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#82b366;strokeWidth=1.5;" edge="1" parent="1" source="svc_product" target="repo_product">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_svc_user_repo" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#82b366;strokeWidth=1.5;" edge="1" parent="1" source="svc_user" target="repo_user">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_svc_ord_repo" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#82b366;strokeWidth=1.5;" edge="1" parent="1" source="svc_order" target="repo_order">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_svc_ord_oirepo" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#82b366;strokeWidth=1.5;" edge="1" parent="1" source="svc_order" target="repo_oi">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_svc_cart_repo" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#82b366;strokeWidth=1.5;" edge="1" parent="1" source="svc_cart" target="repo_cart">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_svc_cart_cirepo" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#82b366;strokeWidth=1.5;" edge="1" parent="1" source="svc_cart" target="repo_ci">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_svc_pay_repo" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#82b366;strokeWidth=1.5;" edge="1" parent="1" source="svc_payment" target="repo_payment">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_svc_notif_repo" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#82b366;strokeWidth=1.5;" edge="1" parent="1" source="svc_notif" target="repo_notif">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Repos USE Models (dependency) -->
+        <mxCell id="rel_repo_prod_model" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#9673a6;strokeWidth=1.5;" edge="1" parent="1" source="repo_product" target="cls_product">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_repo_user_model" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#9673a6;strokeWidth=1.5;" edge="1" parent="1" source="repo_user" target="cls_user">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_repo_ord_model" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#9673a6;strokeWidth=1.5;" edge="1" parent="1" source="repo_order" target="cls_order">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_repo_oi_model" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#9673a6;strokeWidth=1.5;" edge="1" parent="1" source="repo_oi" target="cls_orderitem">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_repo_cart_model" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#9673a6;strokeWidth=1.5;" edge="1" parent="1" source="repo_cart" target="cls_cart">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_repo_ci_model" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#9673a6;strokeWidth=1.5;" edge="1" parent="1" source="repo_ci" target="cls_cartitem">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_repo_pay_model" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#9673a6;strokeWidth=1.5;" edge="1" parent="1" source="repo_payment" target="cls_payment">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_repo_notif_model" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;startArrow=none;dashed=1;strokeColor=#9673a6;strokeWidth=1.5;" edge="1" parent="1" source="repo_notif" target="cls_notif">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Enums used by models -->
+        <mxCell id="rel_user_role" style="edgeStyle=none;endArrow=open;startArrow=none;dashed=1;strokeColor=#d79b00;" edge="1" parent="1" source="cls_user" target="enum_role">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_order_status" style="edgeStyle=none;endArrow=open;startArrow=none;dashed=1;strokeColor=#d79b00;" edge="1" parent="1" source="cls_order" target="enum_orderstatus">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_pay_status" style="edgeStyle=none;endArrow=open;startArrow=none;dashed=1;strokeColor=#d79b00;" edge="1" parent="1" source="cls_payment" target="enum_paystatus">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_pay_method" style="edgeStyle=none;endArrow=open;startArrow=none;dashed=1;strokeColor=#d79b00;" edge="1" parent="1" source="cls_payment" target="enum_paymethod">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_prod_status" style="edgeStyle=none;endArrow=open;startArrow=none;dashed=1;strokeColor=#d79b00;" edge="1" parent="1" source="cls_product" target="enum_prodstatus">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_notif_status" style="edgeStyle=none;endArrow=open;startArrow=none;dashed=1;strokeColor=#d79b00;" edge="1" parent="1" source="cls_notif" target="enum_notifstatus">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
