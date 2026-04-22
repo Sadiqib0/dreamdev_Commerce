@@ -1,223 +1,134 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" version="21.0.0">
+<mxfile host="drawio-plugin" modified="2026-04-22T09:31:11.048Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="22.1.22" etag="Lil4t-v6hkMzszS5a4Wy" type="embed">
   <diagram name="Activity Diagram" id="activity-diagram">
-    <mxGraphModel dx="1800" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1400" math="0" shadow="0">
+    <mxGraphModel dx="1224" dy="998" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1400" math="0" shadow="0">
       <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-
-        <!-- ===================== TITLE ===================== -->
-        <mxCell id="title" value="DreamCommerce - Activity Diagram (Place Order Flow)" style="text;html=1;fontSize=20;fontStyle=1;align=center;fillColor=none;strokeColor=none;" vertex="1" parent="1">
-          <mxGeometry x="300" y="10" width="900" height="40" as="geometry"/>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="swim_container" value="" style="shape=pool;startSize=0;horizontal=1;fillColor=none;strokeColor=#333333;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="60" y="60" width="1300" height="1280" as="geometry" />
         </mxCell>
-
-        <!-- ===================== SWIMLANE CONTAINER ===================== -->
-        <mxCell id="swim_container" value="" style="shape=pool;startSize=0;horizontal=1;fillColor=none;strokeColor=#333333;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="60" y="60" width="1300" height="1280" as="geometry"/>
+        <mxCell id="lane_customer" value="&lt;b&gt;Customer&lt;/b&gt;" style="swimlane;startSize=30;horizontal=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" parent="swim_container" vertex="1">
+          <mxGeometry width="650" height="1280" as="geometry" />
         </mxCell>
-
-        <!-- Customer Lane -->
-        <mxCell id="lane_customer" value="&lt;b&gt;Customer&lt;/b&gt;" style="swimlane;startSize=30;horizontal=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="swim_container">
-          <mxGeometry x="0" y="0" width="650" height="1280" as="geometry"/>
+        <mxCell id="start" value="" style="ellipse;aspect=fixed;fillColor=#000000;strokeColor=#000000;" parent="lane_customer" vertex="1">
+          <mxGeometry x="285" y="40" width="40" height="40" as="geometry" />
         </mxCell>
-
-        <!-- System Lane -->
-        <mxCell id="lane_system" value="&lt;b&gt;DreamCommerce System&lt;/b&gt;" style="swimlane;startSize=30;horizontal=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="swim_container">
-          <mxGeometry x="650" y="0" width="650" height="1280" as="geometry"/>
+        <mxCell id="act_browse" value="Browse Products" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lane_customer" vertex="1">
+          <mxGeometry x="195" y="120" width="220" height="50" as="geometry" />
         </mxCell>
-
-        <!-- ===================== CUSTOMER LANE ACTIVITIES ===================== -->
-
-        <!-- Start -->
-        <mxCell id="start" value="" style="ellipse;aspect=fixed;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="lane_customer">
-          <mxGeometry x="285" y="40" width="40" height="40" as="geometry"/>
+        <mxCell id="act_select" value="Select Product" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lane_customer" vertex="1">
+          <mxGeometry x="195" y="210" width="220" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Browse Products -->
-        <mxCell id="act_browse" value="Browse Products" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane_customer">
-          <mxGeometry x="195" y="120" width="220" height="50" as="geometry"/>
+        <mxCell id="act_add_cart" value="Add Product to Cart" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lane_customer" vertex="1">
+          <mxGeometry x="195" y="300" width="220" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Select Product -->
-        <mxCell id="act_select" value="Select Product" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane_customer">
-          <mxGeometry x="195" y="210" width="220" height="50" as="geometry"/>
+        <mxCell id="dec_shopping" value="Continue Shopping?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" parent="lane_customer" vertex="1">
+          <mxGeometry x="210" y="390" width="190" height="80" as="geometry" />
         </mxCell>
-
-        <!-- Add to Cart -->
-        <mxCell id="act_add_cart" value="Add Product to Cart" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane_customer">
-          <mxGeometry x="195" y="300" width="220" height="50" as="geometry"/>
+        <mxCell id="act_view_cart" value="View Cart" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lane_customer" vertex="1">
+          <mxGeometry x="195" y="520" width="220" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Decision: Continue Shopping? -->
-        <mxCell id="dec_shopping" value="Continue Shopping?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="lane_customer">
-          <mxGeometry x="210" y="390" width="190" height="80" as="geometry"/>
+        <mxCell id="act_checkout" value="Proceed to Checkout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lane_customer" vertex="1">
+          <mxGeometry x="195" y="610" width="220" height="50" as="geometry" />
         </mxCell>
-
-        <!-- View Cart -->
-        <mxCell id="act_view_cart" value="View Cart" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane_customer">
-          <mxGeometry x="195" y="520" width="220" height="50" as="geometry"/>
+        <mxCell id="act_enter_payment" value="Enter Payment Details" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lane_customer" vertex="1">
+          <mxGeometry x="195" y="700" width="220" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Proceed to Checkout -->
-        <mxCell id="act_checkout" value="Proceed to Checkout" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane_customer">
-          <mxGeometry x="195" y="610" width="220" height="50" as="geometry"/>
+        <mxCell id="act_confirmation" value="View Order Confirmation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" parent="lane_customer" vertex="1">
+          <mxGeometry x="195" y="1080" width="220" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Enter Payment Details -->
-        <mxCell id="act_enter_payment" value="Enter Payment Details" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane_customer">
-          <mxGeometry x="195" y="700" width="220" height="50" as="geometry"/>
+        <mxCell id="end" value="" style="ellipse;aspect=fixed;fillColor=#000000;strokeColor=#000000;double=1;" parent="lane_customer" vertex="1">
+          <mxGeometry x="285" y="1170" width="40" height="40" as="geometry" />
         </mxCell>
-
-        <!-- View Order Confirmation -->
-        <mxCell id="act_confirmation" value="View Order Confirmation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="lane_customer">
-          <mxGeometry x="195" y="1080" width="220" height="50" as="geometry"/>
+        <mxCell id="f_start_browse" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" parent="lane_customer" source="start" target="act_browse" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- End -->
-        <mxCell id="end" value="" style="ellipse;aspect=fixed;fillColor=#000000;strokeColor=#000000;double=1;" vertex="1" parent="lane_customer">
-          <mxGeometry x="285" y="1170" width="40" height="40" as="geometry"/>
+        <mxCell id="f_browse_select" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" parent="lane_customer" source="act_browse" target="act_select" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- ===================== SYSTEM LANE ACTIVITIES ===================== -->
-
-        <!-- Validate Cart -->
-        <mxCell id="act_validate" value="Validate Cart &amp; Stock" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="lane_system">
-          <mxGeometry x="215" y="610" width="220" height="50" as="geometry"/>
+        <mxCell id="f_select_cart" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" parent="lane_customer" source="act_select" target="act_add_cart" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Process Payment -->
-        <mxCell id="act_process_payment" value="Process Payment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="lane_system">
-          <mxGeometry x="215" y="700" width="220" height="50" as="geometry"/>
+        <mxCell id="f_cart_dec" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" parent="lane_customer" source="act_add_cart" target="dec_shopping" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Decision: Payment Successful? -->
-        <mxCell id="dec_payment" value="Payment Successful?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="lane_system">
-          <mxGeometry x="230" y="790" width="190" height="80" as="geometry"/>
-        </mxCell>
-
-        <!-- Payment Failed -->
-        <mxCell id="act_failed" value="Show Payment Error" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="lane_system">
-          <mxGeometry x="440" y="790" width="180" height="60" as="geometry"/>
-        </mxCell>
-
-        <!-- Create Order -->
-        <mxCell id="act_create_order" value="Create Order &amp; Order Items" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="lane_system">
-          <mxGeometry x="215" y="920" width="220" height="50" as="geometry"/>
-        </mxCell>
-
-        <!-- Send Notification -->
-        <mxCell id="act_notify" value="Send Order Notification&#xa;(Email + In-App)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="lane_system">
-          <mxGeometry x="215" y="1010" width="220" height="60" as="geometry"/>
-        </mxCell>
-
-        <!-- Update Order Status -->
-        <mxCell id="act_update_status" value="Set Order Status = PENDING" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="lane_system">
-          <mxGeometry x="215" y="1080" width="220" height="50" as="geometry"/>
-        </mxCell>
-
-        <!-- ===================== FLOW ARROWS ===================== -->
-
-        <!-- Start → Browse -->
-        <mxCell id="f_start_browse" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" edge="1" parent="lane_customer" source="start" target="act_browse">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <!-- Browse → Select -->
-        <mxCell id="f_browse_select" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" edge="1" parent="lane_customer" source="act_browse" target="act_select">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <!-- Select → Add to Cart -->
-        <mxCell id="f_select_cart" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" edge="1" parent="lane_customer" source="act_select" target="act_add_cart">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <!-- Add to Cart → Continue Shopping? -->
-        <mxCell id="f_cart_dec" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" edge="1" parent="lane_customer" source="act_add_cart" target="dec_shopping">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <!-- Continue Shopping? Yes → Browse Products (loop back) -->
-        <mxCell id="f_dec_yes" value="Yes" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#82b366;fontSize=11;fontStyle=1;" edge="1" parent="lane_customer" source="dec_shopping" target="act_browse">
+        <mxCell id="f_dec_yes" value="Yes" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#82b366;fontSize=11;fontStyle=1;" parent="lane_customer" source="dec_shopping" target="act_browse" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="100" y="430"/>
-              <mxPoint x="100" y="145"/>
+              <mxPoint x="100" y="430" />
+              <mxPoint x="100" y="145" />
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- Continue Shopping? No → View Cart -->
-        <mxCell id="f_dec_no" value="No" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#b85450;fontSize=11;fontStyle=1;" edge="1" parent="lane_customer" source="dec_shopping" target="act_view_cart">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="f_dec_no" value="No" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#b85450;fontSize=11;fontStyle=1;" parent="lane_customer" source="dec_shopping" target="act_view_cart" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- View Cart → Checkout -->
-        <mxCell id="f_cart_checkout" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" edge="1" parent="lane_customer" source="act_view_cart" target="act_checkout">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="f_cart_checkout" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" parent="lane_customer" source="act_view_cart" target="act_checkout" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Checkout → Enter Payment Details -->
-        <mxCell id="f_checkout_payment" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" edge="1" parent="lane_customer" source="act_checkout" target="act_enter_payment">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="f_checkout_payment" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" parent="lane_customer" source="act_checkout" target="act_enter_payment" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Checkout → Validate Cart (cross-lane) -->
-        <mxCell id="f_checkout_validate" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#6c8ebf;dashed=1;strokeWidth=2;" edge="1" parent="swim_container" source="act_checkout" target="act_validate">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="f_confirm_end" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" parent="lane_customer" source="act_confirmation" target="end" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Enter Payment → Process Payment (cross-lane) -->
-        <mxCell id="f_enter_process" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#6c8ebf;dashed=1;strokeWidth=2;" edge="1" parent="swim_container" source="act_enter_payment" target="act_process_payment">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="lane_system" value="&lt;b&gt;DreamCommerce System&lt;/b&gt;" style="swimlane;startSize=30;horizontal=0;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" parent="swim_container" vertex="1">
+          <mxGeometry x="650" width="650" height="1280" as="geometry" />
         </mxCell>
-
-        <!-- Process Payment → Payment Successful? -->
-        <mxCell id="f_process_dec" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" edge="1" parent="lane_system" source="act_process_payment" target="dec_payment">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="act_validate" value="Validate Cart &amp; Stock" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="lane_system" vertex="1">
+          <mxGeometry x="215" y="610" width="220" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Payment Successful? Yes → Create Order -->
-        <mxCell id="f_pay_yes" value="Yes" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#82b366;fontSize=11;fontStyle=1;" edge="1" parent="lane_system" source="dec_payment" target="act_create_order">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="act_process_payment" value="Process Payment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="lane_system" vertex="1">
+          <mxGeometry x="215" y="700" width="220" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Payment Successful? No → Payment Failed -->
-        <mxCell id="f_pay_no" value="No" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#b85450;fontSize=11;fontStyle=1;" edge="1" parent="lane_system" source="dec_payment" target="act_failed">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="dec_payment" value="Payment Successful?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" parent="lane_system" vertex="1">
+          <mxGeometry x="230" y="790" width="190" height="80" as="geometry" />
         </mxCell>
-
-        <!-- Payment Failed → Enter Payment Details (retry, cross-lane) -->
-        <mxCell id="f_failed_retry" value="Retry" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#b85450;fontSize=11;fontStyle=1;" edge="1" parent="swim_container" source="act_failed" target="act_enter_payment">
+        <mxCell id="act_failed" value="Show Payment Error" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" parent="lane_system" vertex="1">
+          <mxGeometry x="440" y="790" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act_create_order" value="Create Order &amp; Order Items" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="lane_system" vertex="1">
+          <mxGeometry x="215" y="920" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="act_notify" value="Send Order Notification&#xa;(Email + In-App)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="lane_system" vertex="1">
+          <mxGeometry x="215" y="1010" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act_update_status" value="Set Order Status = PENDING" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" parent="lane_system" vertex="1">
+          <mxGeometry x="215" y="1080" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f_process_dec" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" parent="lane_system" source="act_process_payment" target="dec_payment" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_pay_yes" value="Yes" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#82b366;fontSize=11;fontStyle=1;" parent="lane_system" source="dec_payment" target="act_create_order" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_pay_no" value="No" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#b85450;fontSize=11;fontStyle=1;" parent="lane_system" source="dec_payment" target="act_failed" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_create_notify" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" parent="lane_system" source="act_create_order" target="act_notify" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_notify_status" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" parent="lane_system" source="act_notify" target="act_update_status" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_checkout_validate" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#6c8ebf;dashed=1;strokeWidth=2;" parent="swim_container" source="act_checkout" target="act_validate" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_enter_process" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#6c8ebf;dashed=1;strokeWidth=2;" parent="swim_container" source="act_enter_payment" target="act_process_payment" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_failed_retry" value="Retry" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#b85450;fontSize=11;fontStyle=1;" parent="swim_container" source="act_failed" target="act_enter_payment" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1140" y="820"/>
-              <mxPoint x="1140" y="725"/>
-              <mxPoint x="845" y="725"/>
+              <mxPoint x="1140" y="820" />
+              <mxPoint x="1140" y="725" />
+              <mxPoint x="845" y="725" />
             </Array>
           </mxGeometry>
         </mxCell>
-
-        <!-- Create Order → Send Notification -->
-        <mxCell id="f_create_notify" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" edge="1" parent="lane_system" source="act_create_order" target="act_notify">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="f_status_confirm" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#6c8ebf;dashed=1;strokeWidth=2;" parent="swim_container" source="act_update_status" target="act_confirmation" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Send Notification → Update Status -->
-        <mxCell id="f_notify_status" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" edge="1" parent="lane_system" source="act_notify" target="act_update_status">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <!-- Update Status → View Confirmation (cross-lane) -->
-        <mxCell id="f_status_confirm" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#6c8ebf;dashed=1;strokeWidth=2;" edge="1" parent="swim_container" source="act_update_status" target="act_confirmation">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <!-- View Confirmation → End -->
-        <mxCell id="f_confirm_end" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;strokeColor=#333333;" edge="1" parent="lane_customer" source="act_confirmation" target="end">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
       </root>
     </mxGraphModel>
   </diagram>

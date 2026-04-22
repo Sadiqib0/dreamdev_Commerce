@@ -1,12 +1,9 @@
-<mxfile host="drawio-plugin" modified="2026-04-19T13:41:21.425Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="22.1.22" etag="ZeiNIlB1mwEaxahTSfH4" type="embed">
+<mxfile host="drawio-plugin" modified="2026-04-22T09:16:02.511Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" etag="MUqco3auK8I_XbX7kRlL" version="22.1.22" type="embed">
   <diagram name="ERD - Entity Relationship Diagram" id="erd-diagram">
-    <mxGraphModel dx="612" dy="499" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="916" dy="554" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="title" value="DreamCommerce - Entity Relationship Diagram" style="text;html=1;fontSize=20;fontStyle=1;align=center;fillColor=none;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="400" y="14" width="760" height="40" as="geometry" />
-        </mxCell>
         <mxCell id="user" value="User" style="swimlane;fontStyle=1;align=center;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;rounded=1;" parent="1" vertex="1">
           <mxGeometry x="440" y="80" width="240" height="210" as="geometry" />
         </mxCell>
